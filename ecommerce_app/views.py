@@ -13,3 +13,6 @@ def products(request):
 
 def product_detail(request):
     return render(request,'website/product-detail.html')
+
+def contact(request):
+    return render(request,'website/contact.html')
