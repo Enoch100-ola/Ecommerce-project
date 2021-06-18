@@ -21,7 +21,7 @@ from ecommerce_app import views
 
 urlpatterns = [
     path('',views.home,name='home'),
-    path('register/',views.about ,name='ABOUT'),
+    path('about/',views.about ,name='about'),
     path('dashboard/', include('dashboard.urls')),
     path('ecommerce/', include('ecommerce_app.urls')),
 ]

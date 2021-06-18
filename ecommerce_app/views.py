@@ -9,7 +9,7 @@ def about(request):
     return render(request,'website/about.html')
 
 def products(request):
-    return render(request,'website/index.html')
+    return render(request,'website/product.html')
 
 def product_detail(request):
     return render(request,'website/product-detail.html')
