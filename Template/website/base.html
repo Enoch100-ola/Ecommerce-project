@@ -111,13 +111,13 @@
             </div>
             <div class="collapse navbar-collapse" id="site-nav">
               <ul class="nav navbar-nav">
-                <li><a href="ecommerce/" class="active">Home</a></li>
-                <li><a href="ecommerce/about/">About</a></li>
+                <li><a href="{% url 'home' %}" class="active">Home</a></li>
+                <li><a href="{% url 'ecommerce_app:about' %}">About</a></li>
                 <li><a href="product-list1.html">Phones</a></li>
                 <li><a href="product-list2.html">Laptops</a></li>
                 <li><a href="#">Shirts</a></li>
                 <li><a href="#">Screens</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{% url 'ecommerce_app:contact' %}">Contact</a></li>
               </ul>
             </div>
           </div>
