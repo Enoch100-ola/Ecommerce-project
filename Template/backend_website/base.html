@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+       {% block title %}
+        Admin
+        {% endblock %}
+    <link href="{% static 'backend_website/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'backend_website/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'backend_website/css/admin.css' %}" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body id="admin">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3" id="top-sidebar">
+          <img src="{% static 'backend_website/images/admin-logo.png' %}" class="img-responsive">
+        </div>
+        <div class="col-sm-9" id="top-content">
+         <div class="status pull-right">
+           <div class="userStatus">
+            <img src="{% static 'backend_website/images/user.jpg' %}" class="img-circle">
+             <a class="userStatus dropdown-toggle" data-toggle="dropdown" id="userStatus">
+                  Benedict
+                  <span class="caret"></span>
+             </a>
+             <span class="dropdown-menu pull-right">
+              <a href="logout.php">Log Out</a><br>
+              <a href="change-password.php">Change Password</a><br>
+              <a href="edit-profile.php">Edit Profile</a>
+             </span>
+           </div>
+         </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3" id="adim-sidebar">
+          <div class="row">
+            <div class="col-sm-3">
+              <a href="admin.html">
+                <img src="{% static 'backend_website/images/admin-logo.png' %}" class="img-responsive">
+              </a>
+            </div>
+            <div class="col-sm-9">
+              <span>Benedict</span><br>
+              <span class="fa fa-circle text-success"></span>
+              Online<br>
+            </div>
+          </div>
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                   <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                     Users
+                     <span class="pull-right"> 
+                       <span class="fa fa-angle-left"></span>
+                     </span>
+                   </a>
+                </h4>
+              </div>
+              <div id="collapse1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  <ul class="nav">
+                    <li>
+                      <a href="#">
+                        <span class="fa fa-circle-o"></span>
+                         Add Users
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <span class="fa fa-circle-o"></span>
+                        View Users
+                      </a>
+                    </li> 
+                   
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                   <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                     Products
+                     <span class="pull-right"> 
+                       <span class="fa fa-angle-left"></span>
+                     </span>
+                   </a>
+                </h4>
+              </div>
+              <div id="collapse2" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  <ul class="nav">
+                    <li>
+                      <a href="#">
+                        <span class="fa fa-circle-o"></span>
+                         Add Products
+                      </a>
+                    </li>
+                    <li>
+                      <a href="view-products.html">
+                        <span class="fa fa-circle-o"></span>
+                        View Products
+                      </a>
+                    </li> 
+                    <li>
+                      <a href="#">
+                        <span class="fa fa-circle-o"></span>
+                        Categories
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+           
+
+            {% block content %}
+            {% endblock %}
+            
+    
+    <script src="{% static 'backend_website/js/jquery.js' %}"></script>
+    <script src="{% static 'backend_website/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>

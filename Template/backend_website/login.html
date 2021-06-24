@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link href="{% static 'backend_website/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'backend_website/css/custom-fonts.css' %}" rel="stylesheet">
+    <link href="{% static 'backend_website/css/login.css' %}" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-sm-offset-4">
+            <div class="login-logo">
+              <img src="{% static 'backend_website/images/logo.png' %}">
+            </div>
+            <div class="login-form">
+              <div class="page-title text-center">
+                <h1>Login</h1>
+              </div>
+              <form action="" class="form">
+                <div class="form-group">
+                  <label>Username</label>
+                  <input type="text" name="username" placeholder="Username" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" name="password" placeholder="Password" class="form-control">
+                </div>
+                <input type="submit" name="login" value="Login" class="btn btn-success btn-block">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <a href="#" class="login-links">Reset Password</a>
+                  </div>
+                  <div class="col-sm-4 text-center">
+                    <a href="../frontend/index.html" class="login-links">Back to home</a>
+                  </div>
+                  <div class="col-sm-4">
+                    <a href="#" class="login-links pull-right">Register</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+
+
+
+   
+
+
+
+
+    
+    <script src="{% static 'backend_website/js/jquery.js' %}"></script>
+    <script src="{% static 'backend_website/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
