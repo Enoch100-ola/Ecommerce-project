@@ -103,8 +103,8 @@
       <!-- END OF SITE LOGO -->
       {% url 'home' as HOME %}
       {% url 'ecommerce_app:about' as ABOUT %}
-      {% url 'ecommerce_app:products' as PHONES %}
-      {% url 'ecommerce_app:product_detail' as PRODUCT_DETAIL %}
+      {% url 'ecommerce_app:phones' as PHONES %}
+      {% url 'ecommerce_app:laptops' as LAPTOPS %}
       {% url 'ecommerce_app:contact' as CONTACT %}
       
       <div class="row">
@@ -119,8 +119,8 @@
               <ul class="nav navbar-nav">
                 <li><a href="{% url 'home' %}" {% if request.path == HOME %} class="active" {% endif %}>Home</a></li>
                 <li><a href="{% url 'ecommerce_app:about' %}"{% if request.path == ABOUT %} class="active" {% endif %}>About</a></li>
-                <li><a href="product-list1.html"{% if request.path == PHONES %} class="active" {% endif %}>Phones</a></li>
-                <li><a href="product-list2.html">Laptops</a></li>
+                <li><a href="{% url 'ecommerce_app:phones' %}"{% if request.path == PHONES %} class="active" {% endif %}>Phones</a></li>
+                <li><a href="{% url 'ecommerce_app:laptops' %}"{% if request.path == LAPTOPS %} class="active" {% endif %}>Laptops</a></li>
                 <li><a href="#">Shirts</a></li>
                 <li><a href="#">Screens</a></li>
                 <li><a href="{% url 'ecommerce_app:contact' %}"{% if request.path == CONTACT %} class="active" {% endif %}>Contact</a></li>
