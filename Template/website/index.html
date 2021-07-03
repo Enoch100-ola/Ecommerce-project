@@ -91,78 +91,28 @@ Home page
           <h1>Latest Product</h1>
         </div>
         <div class="row">
+          {% if home %}
+          {% for d in home %}
          <div class="col-md-3 col-sm-6">
            <div class="thumbnail">
-             <img src="{% static 'website/images/phone1.jpg' %}">
+             <img src="{{ d.latest_product_img1 }}">
            </div>
            <div class="blog-content">
               <p>
                Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
                Posted By: <a href="#">Alabi</a>.
-               
+              
              </p>
-             <h2>laptop 1</h2>
-             <h4>Prize: &#8358; 40,000 <del>&#8358; 60,000</del></h4>
+             <h2>{{ d.product_name }}</h2>
+             <h4>Prize: &#8358; {{ d.prize }} <del>&#8358; 60,000</del></h4>
              <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
+              {{ d.product_description }}
              </p>
              <a href="product-detail.html" class="btn btn-success">Readmore</a>
            </div>
          </div>
-         <div class="col-md-3 col-sm-6">
-           <div class="thumbnail">
-             <img src="{% static 'website/images/laptop1.jpg' %}">
-           </div>
-           <div class="blog-content">
-              <p>
-               Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-               Posted By: <a href="#">Alabi</a>.
-               
-             </p>
-             <h2>laptop 1</h2>
-             <h4>Prize: &#8358; 40,000 <del>&#8358; 60,000</del></h4>
-             <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
-             </p>
-             <a href="product-detail.html" class="btn btn-success">Readmore</a>
-           </div>
-         </div>
-         <div class="col-md-3 col-sm-6">
-           <div class="thumbnail">
-             <img src="{% static 'website/images/laptop2.jpg' %}">
-           </div>
-           <div class="blog-content">
-              <p>
-               Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-               Posted By: <a href="#">Alabi</a>.
-               
-             </p>
-             <h2>laptop 1</h2>
-             <h4>Prize: &#8358; 40,000 <del>&#8358; 60,000</del></h4>
-             <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
-             </p>
-             <a href="product-detail.html" class="btn btn-success">Readmore</a>
-           </div>
-         </div>
-         <div class="col-md-3 col-sm-6">
-           <div class="thumbnail">
-             <img src="{% static 'website/images/phone2.jpg' %}">
-           </div>
-           <div class="blog-content">
-              <p>
-               Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-               Posted By: <a href="#">Alabi</a>.
-               
-             </p>
-             <h2>laptop 1</h2>
-             <h4>Prize: &#8358; 40,000 <del>&#8358; 60,000</del></h4>
-             <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
-             </p>
-             <a href="product-detail.html" class="btn btn-success">Readmore</a>
-           </div>
-         </div>
+         {% endfor %}
+         {% endif %} 
         </div>
       </div>
       <div id="feature-section">

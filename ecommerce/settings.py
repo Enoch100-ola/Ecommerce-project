@@ -22,6 +22,8 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 
 STATICFILES_DIRS = [STATIC_DIR, ]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
