@@ -8,11 +8,11 @@ def home(request):
 def about(request):
     return render(request,'website/about.html')
 
-def products(request):
-    return render(request,'website/product.html')
+def phones(request):
+    return render(request,'website/product-list1.html')
 
-def product_detail(request):
-    return render(request,'website/product-detail.html')
+def laptops(request):
+    return render(request,'website/product-list2.html')
 
 def contact(request):
     return render(request,'website/contact.html')
