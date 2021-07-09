@@ -20,7 +20,7 @@ class Product(models.Model):
     Time_record = models.DateTimeField(auto_now_add=True)
     product_img1 = models.ImageField(blank=True, null=True, verbose_name='Product Image 1', upload_to='uploads/products')
     product_img2 = models.ImageField(blank=True, null=True, verbose_name='Product Image 2', upload_to='uploads/products')
-    product_img3 = models.ImageField( blank=True, null=True,verbose_name='Product Image 3', upload_to='uploads/products')
+    # product_img3 = models.ImageField( blank=True, null=True,verbose_name='Product Image 3', upload_to='uploads/products')
     prize = models.DecimalField(max_digits=10000, decimal_places=2)
     product_description = models.TextField(blank=True, null=True)
 
