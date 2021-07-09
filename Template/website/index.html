@@ -25,7 +25,7 @@ Home page
                    </div>
                  </div>
                 <div class="col-md-6 col-sm-6">
-                   <div class="carousel-text">
+                  <div class="carousel-text">
                     <h3>Phone 1</h3>
                     <p>Best Phone </p>
                     <a href="#" class="btn btn-success">Readmore</a>
@@ -120,9 +120,11 @@ Home page
           <h1>Featured Product</h1>
         </div>
         <div class="row">
-         <div class="col-md-3 col-sm-6">
+         {% if home %}
+          {% for f in home %}
+            <div class="col-md-3 col-sm-6">
            <div class="thumbnail">
-             <img src="{% static 'website/images/phone8.jpg' %}">
+             <img src="{{ f.img_url2 }}">
            </div>
            <div class="blog-content">
               <p>
@@ -131,68 +133,15 @@ Home page
                
              </p>
              <h2>Phone 8</h2>
-             <h4>Prize: &#8358; 40,000 <del>&#8358; 60,000</del></h4>
+             <h4>Prize: &#8358; {{ f.prize }} <del>&#8358; 60,000</del></h4>
              <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
+                {{ f.product_description }}
              </p>
              <a href="product-detail.html" class="btn btn-success">Readmore</a>
            </div>
          </div>
-         <div class="col-md-3 col-sm-6">
-           <div class="thumbnail">
-             <img src="{% static 'website/images/phone5.jpg' %}">
-           </div>
-           <div class="blog-content">
-              <p>
-               Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-               Posted By: <a href="#">Alabi</a>.
-               
-             </p>
-             <h2>Phone 1</h2>
-             <h4>Prize: &#8358; 40,000 <del>&#8358; 60,000</del></h4>
-             <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
-             </p>
-             <a href="product-detail.html" class="btn btn-success">Readmore</a>
-           </div>
-         </div>
-         <div class="col-md-3 col-sm-6">
-           <div class="thumbnail">
-             <img src="{% static 'website/images/laptop4.jpg' %}">
-           </div>
-           <div class="blog-content">
-              <p>
-               Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-               Posted By: <a href="#">Alabi</a>.
-               
-             </p>
-             <h2>Laptop 4</h2>
-             <h4>Prize: &#8358; 40,000 <del>&#8358; 60,000</del></h4>
-             <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
-             </p>
-             <a href="product-detail.html" class="btn btn-success">Readmore</a>
-           </div>
-         </div>
-         <div class="col-md-3 col-sm-6">
-           <div class="thumbnail">
-             <img src="{% static 'website/images/phone1.jpg' %}">
-           </div>
-           <div class="blog-content">
-              <p>
-               Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-               Posted By: <a href="#">Alabi</a>.
-               
-             </p>
-             <h2>Phone 5</h2>
-             <h4>Prize: &#8358; 40,000 <del>&#8358; 60,000</del></h4>
-
-             <p>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
-             </p>
-             <a href="{% static 'website/product-detail.html' %}" class="btn btn-success">Readmore</a>
-           </div>
-         </div>
+          {% endfor %}
+         {% endif %}
         </div>
       </div>
 
