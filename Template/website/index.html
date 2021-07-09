@@ -94,7 +94,8 @@ Home page
           {% if home %}
           {% for d in home %}
          <div class="col-md-3 col-sm-6">
-             <img src="{{ d.img_url1 }}">
+           <div class="thumbnail">
+             <img src="{{ d.latest_product_img1 }}">
            </div>
            <div class="blog-content">
               <p>
