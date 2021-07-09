@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from ecommerce_app.models import *
 
 # Create your views here.
 def home(request):
-    return render(request,'website/index.html')
+    latestproduct = Product.objects.order_by('-Time_record')
+    return render(request,'website/index.html', {'home':latestproduct})
 
 def about(request):
     return render(request,'website/about.html')

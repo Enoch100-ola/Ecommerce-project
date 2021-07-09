@@ -6,7 +6,9 @@ admin.site.site_header='Ecommerce Website'
 # Register your models here.
 
 
-admin.site.register(Product)
+# admin.site.register(Product)
 admin.site.register(Customer)
 
-
+@admin.register(Product)
+class PropertyAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('product_name',)}
