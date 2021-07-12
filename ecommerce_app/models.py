@@ -13,10 +13,14 @@ class Customer(models.Model):
     email = models.EmailField()
 
 class ProductCategory(models.Model):
-    
+    name = models.CharField(max_length=150, unique=True)
 
-    def product_cat(self):
+    def get_product_cat(self):
         return self.name.capitalize()
+
+    def __str__(self):
+        return self.name.capitalize()
+
 
 class Product(models.Model):
     product_name = models.CharField(max_length=200)
@@ -64,8 +68,23 @@ class latestProduct(models.Model):
     latest_product_cat_id = models.ForeignKey(ProductCategory, related_name='property_location', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.latest_product_name
+    
+    def __str__(self):
+        return self.latest_product_description
+
+    def img_url1(self):
+        if self.latest_product_img.url:
+            return self.latest_product_img.url
+        else:
+            return '/static/website/images/img_1.jpg'
+    
+
+
+
 class featureProduct(models.Model):
-    product_name = models.CharField(max_length=200)
+    feature_product_name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
     Time_record = models.DateTimeField(auto_now_add=True)
     feature_product_img = models.ImageField( verbose_name='Feature Product Image 1', upload_to='uploads/feature product_img')
@@ -74,12 +93,27 @@ class featureProduct(models.Model):
     feature_product_description = models.TextField(blank=True, null=True)
     feature_product_cat_id = models.ForeignKey(ProductCategory, related_name='feature_product_cat_id', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
+
+
+    def __str__(self):
+        return self.feature_product_name
+    
+    def __str__(self):
+        return self.feature_product_description
+
+    def img_url1(self):
+        if self.feature_product_img.url:
+            return self.feature_product_img.url
+        else:
+            return '/static/website/images/img_1.jpg'
+
 class ContactAgent(models.Model):
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=15)
     email = models.EmailField()
     agent_id = models.ForeignKey(User, on_delete=models.CASCADE)
     product_cat_id = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.name

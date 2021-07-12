@@ -9,6 +9,8 @@ admin.site.site_header='Ecommerce Website'
 admin.site.register(ProductCategory)
 admin.site.register(ContactAgent)
 admin.site.register(Customer)
+admin.site.register(latestProduct)
+admin.site.register(featureProduct)
 
 @admin.register(Product)
 class PropertyAdmin(admin.ModelAdmin):
