@@ -11,7 +11,8 @@ def about(request):
     return render(request,'website/about.html')
 
 def phones(request):
-    return render(request,'website/product-list1.html')
+    all_phone = Product.objects.all()
+    return render(request,'website/product-list1.html', {'AllPhones':all_phone})
 
 def laptops(request):
     return render(request,'website/product-list2.html')

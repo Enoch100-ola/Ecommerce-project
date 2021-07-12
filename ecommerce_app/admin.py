@@ -6,7 +6,8 @@ admin.site.site_header='Ecommerce Website'
 # Register your models here.
 
 
-# admin.site.register(Product)
+admin.site.register(ProductCategory)
+admin.site.register(ContactAgent)
 admin.site.register(Customer)
 
 @admin.register(Product)
