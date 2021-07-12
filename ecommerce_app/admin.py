@@ -5,13 +5,15 @@ from ecommerce_app.models import *
 admin.site.site_header='Ecommerce Website'
 # Register your models here.
 
+@admin.register(Product)
+class PropertyAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('product_name',)}
+
 
 admin.site.register(ProductCategory)
 admin.site.register(ContactAgent)
 admin.site.register(Customer)
 admin.site.register(latestProduct)
 admin.site.register(featureProduct)
+admin.site.register(carousel_slide)
 
-@admin.register(Product)
-class PropertyAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ('product_name',)}
