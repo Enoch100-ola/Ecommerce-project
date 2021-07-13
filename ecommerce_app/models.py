@@ -26,6 +26,8 @@ class Product(models.Model):
     product_name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
     Time_record = models.DateTimeField(auto_now_add=True)
+    agent_id = models.ForeignKey(User, related_name='agent', on_delete=models.CASCADE)
+    product_cat_id = models.ForeignKey(ProductCategory, related_name='prod_cat_id', on_delete=models.CASCADE)
     product_img1 = models.ImageField( verbose_name='Product Image 1', upload_to='uploads/products')
     product_img2 = models.ImageField( verbose_name='Product Image 2', upload_to='uploads/products')
     # product_img3 = models.ImageField( blank=True, null=True,verbose_name='Product Image 3', upload_to='uploads/products')
@@ -94,7 +96,7 @@ class featureProduct(models.Model):
     prize = models.DecimalField(max_digits=10000, decimal_places=2)
     feature_product_description = models.TextField(blank=True, null=True)
     feature_product_cat_id = models.ForeignKey(ProductCategory, related_name='feature_product_cat_id', on_delete=models.CASCADE)
-    # name = models.CharField(max_length=200)
+    
 
 
     def __str__(self):
@@ -138,8 +140,6 @@ class ContactAgent(models.Model):
     phone = models.CharField(max_length=15)
     email = models.EmailField()
     agent_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    product_cat_id = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
-    
 
     def __str__(self):
         return self.name
