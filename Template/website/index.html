@@ -108,7 +108,7 @@ Home page
              <p>
               {{ d.latest_product_description }}
              </p>
-             <a href="product-detail.html" class="btn btn-success">Readmore</a>
+             <a href="{% url 'ecommerce_app:ProductDetail' d.id %}" class="btn btn-success">Readmore</a>
            </div>
          </div>
          {% endfor %}
@@ -124,7 +124,7 @@ Home page
           {% for f in homepage2 %}
             <div class="col-md-3 col-sm-6">
            <div class="thumbnail">
-             <img src="{{ f.feat_img_url1 }}">
+             <img src="{{ f.latest_img_url1 }}">
            </div>
            <div class="blog-content">
               <p>
@@ -132,12 +132,12 @@ Home page
                Posted By: <a href="#">{{ f.agent_id }}</a>.
                
              </p>
-             <h2>{{ f.feature_product_name }}</h2>
+             <h2>{{ f.latest_product_name }}</h2>
              <h4>Prize: &#8358; {{ f.prize }} <del>&#8358; 60,000</del></h4>
              <p>
-                {{ f.feature_product_description }}
+                {{ f.latest_product_description }}
              </p>
-             <a href="product-detail.html" class="btn btn-success">Readmore</a>
+             <a href="{% url 'ecommerce_app:ProductDetail' f.id %}" class="btn btn-success">Readmore</a>
            </div>
          </div>
           {% endfor %}

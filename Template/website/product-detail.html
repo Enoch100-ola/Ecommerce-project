@@ -8,24 +8,23 @@ Product Detail
      
       <!-- SITE BLOG STARTS HERE -->
       <div class="row">
-        <div class="col-md-8 col-sm-8">
+        {% if single_prod %}
+          <div class="col-md-8 col-sm-8">
            <div class="row">
             <div class="col-sm-5 single-blog">
-              <img src="{% static 'website/images/phone1.jpg' %}" class="img-thumbnail img-responsive">
+              <img src="{{ single_prod.latest_img_url1 }}" class="img-thumbnail img-responsive">
             </div>
             <div class="col-sm-7">
               <div class="blog-content">
                 <h2>Phone 1</h2>
-                <h4>Prize: &#8358; 50,000</h4>
+                <h4>Prize: &#8358; {{ single_prod.latest_prize }}</h4>
                 <h4>Prize: <del>&#8358; 65,000</del></h4>
                 <p>
                  Time:8:30am, Category:<a href="sport.html">Phone.</a>. 
                  
                </p>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. In ipsa natus, vel non earum, distinctio iusto reprehenderit alias quisquam possimus, at qui nostrum ad enim totam repudiandae consectetur eius iste?
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. In ipsa natus, vel non earum, distinctio iusto reprehenderit alias quisquam possimus, at qui nostrum ad enim totam repudiandae consectetur eius iste?
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. In ipsa natus, vel non earum, distinctio iusto reprehenderit alias quisquam possimus, at qui nostrum ad enim totam repudiandae consectetur eius iste?
+                  {{ single_prod.latest_product_description }}
                 </p>
                 <from class="form" action="#" method="post">
                   <div class="form-group">
@@ -112,6 +111,7 @@ Product Detail
              </div>
            </div>
         </div>
+        {% endif %}
         <div class="col-md-4 col-sm-4">
           <div class="widget">
             <h3>Product Categories</h3>

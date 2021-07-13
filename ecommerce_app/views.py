@@ -4,7 +4,7 @@ from ecommerce_app.models import *
 
 # Create your views here.
 def home(request):
-    featureprod = featureProduct.objects.order_by('-Time_record')
+    featureprod = latestProduct.objects.order_by('-Time_record')[:4:]
     latestprod = latestProduct.objects.order_by('-Time_record')[:4]
     pageadvert = {
         'homepage1':latestprod,
@@ -18,11 +18,27 @@ def about(request):
 
 def phones(request):
     all_phone = latestProduct.objects.filter(latest_product_cat_id__name='Phone')
-    return render(request,'website/product-list1.html', {'AllPhones':all_phone})
+    no_of_AvaliablePhone = latestProduct.objects.filter(latest_product_cat_id__name='Phone').count()
+
+    phon = {
+        'AllPhones':all_phone,
+        'NoPhoneAvaliable':no_of_AvaliablePhone
+    }
+
+    return render(request,'website/product-list1.html', phon)
 
 def laptops(request):
     all_laptops = latestProduct.objects.filter(latest_product_cat_id__name='Laptop')
-    return render(request,'website/product-list2.html', {'laptops':all_laptops})
+    NumAvaliable = latestProduct.objects.filter(latest_product_cat_id__name='Laptop').count()
+    lap = {
+        'laptops':all_laptops,
+        'numOflaptop':NumAvaliable
+    }
+    return render(request,'website/product-list2.html', lap)
 
 def contact(request):
     return render(request,'website/contact.html')
+
+def ProductDetail(request, prod_id):
+    prod = latestProduct.objects.get(id=prod_id)
+    return render(request,'website/product-detail.html', {'single_prod':prod})
