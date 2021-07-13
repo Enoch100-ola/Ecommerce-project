@@ -32,6 +32,8 @@ class Product(models.Model):
     prize = models.DecimalField(max_digits=10000, decimal_places=2)
     product_description = models.TextField(blank=True, null=True)
 
+    
+
     def __str__(self):
         return self.product_name
     
@@ -137,7 +139,7 @@ class ContactAgent(models.Model):
     email = models.EmailField()
     agent_id = models.ForeignKey(User, on_delete=models.CASCADE)
     product_cat_id = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
-
+    
 
     def __str__(self):
         return self.name

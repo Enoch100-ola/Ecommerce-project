@@ -91,22 +91,22 @@ Home page
           <h1>Latest Product</h1>
         </div>
         <div class="row">
-          {% if home %}
-          {% for d in home %}
+          {% if homepage1 %}
+          {% for d in homepage1 %}
          <div class="col-md-3 col-sm-6">
            <div class="thumbnail">
-             <img src="{{ d.img_url1 }}">
+             <img src="{{ d.latest_img_url1 }}">
            </div>
            <div class="blog-content">
               <p>
-               Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-               Posted By: <a href="#">Alabi</a>.
+               Posted on:{{ d.Time_record }}, Category:<a href="sport.html">{{ d.latest_product_cat_id }}</a>. 
+               Posted By: <a href="#">{{ d.agent_id }}</a>.
               
              </p>
-             <h2>{{ d.product_name }}</h2>
-             <h4>Prize: &#8358; {{ d.prize }} <del>&#8358; 60,000</del></h4>
+             <h2>{{ d.latest_product_name }}</h2>
+             <h4>Prize: &#8358; {{ d.latest_prize }} <del>&#8358; 60,000</del></h4>
              <p>
-              {{ d.product_description }}
+              {{ d.latest_product_description }}
              </p>
              <a href="product-detail.html" class="btn btn-success">Readmore</a>
            </div>
@@ -120,22 +120,22 @@ Home page
           <h1>Featured Product</h1>
         </div>
         <div class="row">
-         {% if home %}
-          {% for f in home %}
+         {% if homepage2 %}
+          {% for f in homepage2 %}
             <div class="col-md-3 col-sm-6">
            <div class="thumbnail">
-             <img src="{{ f.img_url2 }}">
+             <img src="{{ f.feat_img_url1 }}">
            </div>
            <div class="blog-content">
               <p>
-               Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-               Posted By: <a href="#">Alabi</a>.
+               Posted on:{{ f.Time_record }}, Category:<a href="sport.html">{{ f.feature_product_cat_id }}</a>. 
+               Posted By: <a href="#">{{ f.agent_id }}</a>.
                
              </p>
-             <h2>Phone 8</h2>
+             <h2>{{ f.feature_product_name }}</h2>
              <h4>Prize: &#8358; {{ f.prize }} <del>&#8358; 60,000</del></h4>
              <p>
-                {{ f.product_description }}
+                {{ f.feature_product_description }}
              </p>
              <a href="product-detail.html" class="btn btn-success">Readmore</a>
            </div>
