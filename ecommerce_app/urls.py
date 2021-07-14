@@ -11,4 +11,5 @@ urlpatterns = [
     path('phones/',views.phones,name='phones'),
     path('laptops/',views.laptops,name='laptops'),
     path('productdetail/<int:prod_id>',views.ProductDetail,name='ProductDetail'),
+    path('aboutdetail/<int:abt_id>',views.aboutDetail,name='AboutDetail'),
 ]

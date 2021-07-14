@@ -14,7 +14,8 @@ def home(request):
 
 
 def about(request):
-    return render(request,'website/about.html')
+    aboutme = Aboutpage.objects.all()
+    return render(request,'website/about.html', {'abtme':aboutme})
 
 def phones(request):
     all_phone = latestProduct.objects.filter(latest_product_cat_id__name='Phone')
@@ -42,3 +43,7 @@ def contact(request):
 def ProductDetail(request, prod_id):
     prod = latestProduct.objects.get(id=prod_id)
     return render(request,'website/product-detail.html', {'single_prod':prod})
+
+def aboutDetail(request, abt_id):
+    abt = Aboutpage.objects.get(id=abt_id)
+    return render(request,'website/about-detail.html', {'single_abt':abt})

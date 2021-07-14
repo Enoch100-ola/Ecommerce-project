@@ -143,3 +143,21 @@ class ContactAgent(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Aboutpage(models.Model):
+    Abtimage = models.ImageField(verbose_name='About me images', upload_to='uploads/About image')
+    name = models.CharField(max_length=200)
+    description = models.TextField(max_length=500)
+
+    def __str__(self):
+        return self.name
+   
+    def __str__(self):
+        return self.description
+
+    def abtimg(self):
+        if self.Abtimage.url:
+            return self.Abtimage.url
+        else:
+            return '/static/website/images/img_1.jpg'

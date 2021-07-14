@@ -21,4 +21,5 @@ admin.site.register(ContactAgent)
 admin.site.register(Customer)
 admin.site.register(featureProduct)
 admin.site.register(carousel_slide)
+admin.site.register(Aboutpage)
 
