@@ -16,7 +16,7 @@ Product Detail
             </div>
             <div class="col-sm-7">
               <div class="blog-content">
-                <h2>Phone 1</h2>
+                <h2>{{ single_prod.latest_product_name }}</h2>
                 <h4>Prize: &#8358; {{ single_prod.latest_prize }}</h4>
                 <h4>Prize: <del>&#8358; 65,000</del></h4>
                 <p>
@@ -116,9 +116,9 @@ Product Detail
           <div class="widget">
             <h3>Product Categories</h3>
             <ul class="nav">
-              <li><a href="#">Phones <span class="badge pull-right">7</span></a></li>
+              <li><a href="#">Phones <span class="badge pull-right">{{ NoPhoneAvaliable }}</span></a></li>
               <li><a href="#">Electronics <span class="badge pull-right">10</span></a></li>
-              <li><a href="#">Laptops <span class="badge pull-right">5</span></a></li>
+              <li><a href="#">Laptops <span class="badge pull-right">{{ numOflaptop }}</span></a></li>
               <li><a href="#">Shirts <span class="badge pull-right">4</span></a></li>
               <li><a href="#">Flat Screens <span class="badge pull-right">15</span></a></li>
             </ul>

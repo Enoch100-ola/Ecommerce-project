@@ -4,8 +4,8 @@ from ecommerce_app.models import *
 
 # Create your views here.
 def home(request):
-    featureprod = latestProduct.objects.order_by('-Time_record')[:4:]
-    latestprod = latestProduct.objects.order_by('-Time_record')[:4]
+    featureprod = latestProduct.objects.filter(latest_product_cat_id__name='Laptop')[:4]
+    latestprod = latestProduct.objects.filter(latest_product_cat_id__name='Phone')[:4]
     pageadvert = {
         'homepage1':latestprod,
         'homepage2':featureprod
