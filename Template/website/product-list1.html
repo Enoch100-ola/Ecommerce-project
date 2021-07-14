@@ -8,33 +8,6 @@
 
 
       <!-- SITE BLOG STARTS HERE -->
-      <h1>{{ NoPhoneAvaliable }} Products In Phone Category</h1>
-     
-      <div class="row">
-        {% if AllPhones %}
-          {% for m in AllPhones %}
-            <div class="col-md-3 col-sm-6">
-             <div class="thumbnail">
-              <img src="{{ m.latest_img_url1 }}">
-            </div>
-            <div class="blog-content">
-              <p>
-                Time:{{ m.Time_record }}, Category:<a href="sport.html">{{ m.latest_product_cat_id }}</a>. 
-                Posted By: <a href="#">{{ m.agent_id }}</a>.
-              </p>
-              <h2>{{ m.latest_product_name }}</h2>
-              <h2>Prize: &#8358; {{ m.latest_prize }} </h2>
-             <p>
-              {{ m.latest_product_description }}
-              </p>
-              <a href="{% url 'ecommerce_app:ProductDetail' m.id %}" class="btn btn-success">Readmore</a>
-            </div>
-            </div> 
-          {% endfor %}
-        {% endif %}
-      </div>
-      
-
        <h1>{{ NoPhoneAvaliable }} Products In Phone Category</h1>
       <div class="row">
         {% if AllPhones %}
@@ -52,9 +25,9 @@
             <h2>{{ m.latest_product_name }}</h2>
             <h2>Prize: &#8358; {{ m.latest_prize }}  </h2>
             <p>
-             {{ m.latest_product_description }}
+             {{ m.latest_product_description|truncatewords:10 }}
             </p>
-            <a href="product-detail.html" class="btn btn-success">Readmore</a>
+            <a href="{% url 'ecommerce_app:ProductDetail' m.id %}" class="btn btn-success">Readmore</a>
           </div>
         </div> 
          {% endfor %}
