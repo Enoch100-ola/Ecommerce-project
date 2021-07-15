@@ -8,152 +8,30 @@ laptops
 
 
       <!-- SITE BLOG STARTS HERE -->
-      <h1>3 Products In Laptop Category</h1>
+      <h1>{{ numOflaptop }} Products In Laptop Category</h1>
       <div class="row">
-        <div class="col-md-3 col-sm-6">
+        {% if laptops %}
+          {% for n in laptops %}
+            <div class="col-md-3 col-sm-6">
           <div class="thumbnail">
-            <img src="{% static 'website/images/laptop1.jpg' %}">
+            <img src="{{ n.latest_img_url1 }}">
           </div>
           <div class="blog-content">
              <p>
               Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-              Posted By: <a href="#">Alabi</a>.
+              Posted By: <a href="#">{{ n.agent_id }}</a>.
               
             </p>
-            <h2>laptop 1</h2>
-            <h2>Prize: &#8358; 60,000 </h2>
+            <h2>{{ n.latest_prize }}</h2>
+            <h2>Prize: &#8358; {{ n.latest_prize }} </h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
             </p>
-            <a href="product-detail.html" class="btn btn-success">Readmore</a>
+            <a href="{% url 'ecommerce_app:ProductDetail' n.id %}" class="btn btn-success">Readmore</a>
           </div>
-        </div> 
-        <div class="col-md-3 col-sm-6">
-          <div class="thumbnail">
-            <img src="{% static 'website/images/laptop2.jpg' %}">
-          </div>
-          <div class="blog-content">
-             <p>
-              Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-              Posted By: <a href="#">Alabi</a>.
-              
-            </p>
-            <h2>laptop 1</h2>
-            <h2>Prize: &#8358; 60,000 </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
-            </p>
-            <a href="product-detail.html" class="btn btn-success">Readmore</a>
-          </div>
-        </div> 
-        <div class="col-md-3 col-sm-6">
-          <div class="thumbnail">
-            <img src="{% static 'website/images/laptop3.jpg' %}">
-          </div>
-          <div class="blog-content">
-             <p>
-              Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-              Posted By: <a href="#">Alabi</a>.
-              
-            </p>
-            <h2>laptop 1</h2>
-            <h2>Prize: &#8358; 60,000 </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
-            </p>
-            <a href="product-detail.html" class="btn btn-success">Readmore</a>
-          </div>
-        </div> 
-        <div class="col-md-3 col-sm-6">
-          <div class="thumbnail">
-            <img src="{% static 'website/images/laptop4.jpg' %}">
-          </div>
-          <div class="blog-content">
-             <p>
-              Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-              Posted By: <a href="#">Alabi</a>.
-              
-            </p>
-            <h2>laptop 1</h2>
-            <h2>Prize: &#8358; 60,000 </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
-            </p>
-            <a href="product-detail.html" class="btn btn-success">Readmore</a>
-          </div>
-        </div> 
-        <div class="col-md-3 col-sm-6">
-          <div class="thumbnail">
-            <img src="{% static 'website/images/laptop5.jpg' %}">
-          </div>
-          <div class="blog-content">
-             <p>
-              Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-              Posted By: <a href="#">Alabi</a>.
-              
-            </p>
-            <h2>laptop 1</h2>
-            <h2>Prize: &#8358; 60,000 </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
-            </p>
-            <a href="product-detail.html" class="btn btn-success">Readmore</a>
-          </div>
-        </div> 
-        <div class="col-md-3 col-sm-6">
-          <div class="thumbnail">
-            <img src="{% static 'website/images/laptop6.jpg' %}">
-          </div>
-          <div class="blog-content">
-             <p>
-              Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-              Posted By: <a href="#">Alabi</a>.
-              
-            </p>
-            <h2>laptop 1</h2>
-            <h2>Prize: &#8358; 60,000 </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
-            </p>
-            <a href="product-detail.html" class="btn btn-success">Readmore</a>
-          </div>
-        </div> 
-         <div class="col-md-3 col-sm-6">
-          <div class="thumbnail">
-            <img src="{% static 'website/images/laptop7.jpg' %}">
-          </div>
-          <div class="blog-content">
-             <p>
-              Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-              Posted By: <a href="#">Alabi</a>.
-              
-            </p>
-            <h2>laptop 1</h2>
-            <h2>Prize: &#8358; 60,000 </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
-            </p>
-            <a href="product-detail.html" class="btn btn-success">Readmore</a>
-          </div>
-        </div> 
-        <div class="col-md-3 col-sm-6">
-          <div class="thumbnail">
-            <img src="{% static 'website/images/laptop8.jpg' %}">
-          </div>
-          <div class="blog-content">
-             <p>
-              Time:8:30am, Category:<a href="sport.html">laptops.</a>. 
-              Posted By: <a href="#">Alabi</a>.
-              
-            </p>
-            <h2>laptop 1</h2>
-            <h2>Prize: &#8358; 60,000 </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
-            </p>
-            <a href="product-detail.html" class="btn btn-success">Readmore</a>
-          </div>
-        </div> 
+            </div>  
+          {% endfor %}
+        {% endif %}
 
        
       </div>
