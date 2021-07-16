@@ -14,7 +14,7 @@ laptops
           {% for n in laptops %}
             <div class="col-md-3 col-sm-6">
           <div class="thumbnail">
-            <img src="{{ n.latest_img_url1 }}">
+            <a href="{{ n.get_product_url }}"><img src="{{ n.latest_img_url1 }}"></a>
           </div>
           <div class="blog-content">
              <p>
@@ -25,9 +25,9 @@ laptops
             <h2>{{ n.latest_prize }}</h2>
             <h2>Prize: &#8358; {{ n.latest_prize }} </h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti esse harum perferendis, dolorum dicta non, eos. Aliquid voluptate qui quo! Omnis ex modi expedita natus et eum aut excepturi facere!
+               {{ n.latest_product_description|truncatewords:10 }}
             </p>
-            <a href="{% url 'ecommerce_app:ProductDetail' n.id %}" class="btn btn-success">Readmore</a>
+            <a href="{{ n.get_product_url }}" class="btn btn-success">Readmore</a>
           </div>
             </div>  
           {% endfor %}

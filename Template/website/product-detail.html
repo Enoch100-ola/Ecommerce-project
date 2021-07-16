@@ -26,10 +26,10 @@ Product Detail
                 <p>
                   {{ single_prod.latest_product_description }}
                 </p>
-                <from class="form" action="#" method="post">
+                <form class="form" method="POST">
                   <div class="form-group">
                     <label>Fullname</label>
-                    <input type="text" class="form-control" name="fullname" placeholder="Enter Fullname">
+                    <input type="text" class="form-control" name="name" placeholder="Enter Fullname">
                   </div>
                   <div class="form-group">
                     <label>Email</label>
@@ -44,7 +44,8 @@ Product Detail
                     <textarea name="address" class="form-control" cols="30" rows="10"></textarea>
                   </div>
                   <input type="submit" class="btn btn-success" value="Submit">
-                </from>
+                  {% csrf_token %}
+                </form>
               </div>
               
             </div>
@@ -75,7 +76,7 @@ Product Detail
              </div>
              <div class="col-md-4 col-sm-6">
                <div class="thumbnail">
-                 <img src="images/phone2.jpg">
+                 <img src="{% static 'website/images/phone2.jpg' %}">
                </div>
                <div class="blog-content">
                   <p>

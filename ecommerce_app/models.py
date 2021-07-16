@@ -1,8 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
-
 # from django.db.models.base import Model
-# from django.shortcuts import reverse
+from django.shortcuts import reverse
+
+
 
 # Create your models here.
 class Customer(models.Model):
@@ -54,11 +55,7 @@ class Product(models.Model):
         else:
             return '/static/website/images/img_1.jpg'
 
-    def img_url3(self):
-        if self.product_img3.url:
-            return self.product_img3.url
-        else:
-            return '/static/website/images/img_1.jpg'
+    
 
 
 class latestProduct(models.Model):
@@ -68,9 +65,10 @@ class latestProduct(models.Model):
     latest_product_img = models.ImageField( verbose_name='latest Product Image 1', upload_to='uploads/products')
     agent_id = models.ForeignKey(User, related_name='latest_property_agent', on_delete=models.CASCADE)
     latest_prize = models.DecimalField(max_digits=10000, decimal_places=2)
+    # latest_discount_prize = models.DecimalField(max_digits=20000, decimal_places=0)
     latest_product_description = models.TextField(blank=True, null=True)
     latest_product_cat_id = models.ForeignKey(ProductCategory, related_name='lat_property_cat', on_delete=models.CASCADE)
-    # name = models.CharField(max_length=200)
+    
 
     def __str__(self):
         return self.latest_product_name
@@ -83,6 +81,9 @@ class latestProduct(models.Model):
             return self.latest_product_img.url
         else:
             return '/static/website/images/img_1.jpg'
+
+    def get_product_url(self):
+        return reverse("ecommerce_app:ProductDetail", kwargs={'slug': self.slug })
     
 
 
@@ -139,6 +140,7 @@ class ContactAgent(models.Model):
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=15)
     email = models.EmailField()
+    address = models.TextField(blank=True, null=True)
     agent_id = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
