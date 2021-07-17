@@ -27,6 +27,11 @@ Product Detail
                   {{ single_prod.latest_product_description }}
                 </p>
                 <form class="form" method="POST">
+                  {% if messages %}
+                    {% for m in messages %}
+                      <div class="alert alert-success">{{ m }}</div>
+                    {% endfor %}
+                  {% endif %}
                   <div class="form-group">
                     <label>Fullname</label>
                     <input type="text" class="form-control" name="name" placeholder="Enter Fullname">
