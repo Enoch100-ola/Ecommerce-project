@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.contrib import auth
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from ecommerce_app.models import *
 from django.core.exceptions import ObjectDoesNotExist
@@ -10,6 +11,7 @@ from django.utils.html import strip_tags
 from django.conf import settings
 
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -93,10 +95,34 @@ def aboutDetail(request, abt_id):
     return render(request,'website/about-detail.html', {'single_abt':abt})
 
 def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            if user.is_superuser:
+                login(request, user)
+                return redirect('ecommerce_app:AdminPage')
+            else:
+                login(request, user)
+                return redirect('ecommerce_app:ViewProduct')
+        else:
+            messages.error(request, 'username and password do not match')
+
     return render(request, 'backend_website/login.html')
 
-def Admin_page(request):
+@login_required(login_url='/ecommerce/login/')
+def Admin_dashboard(request):
     return render(request, 'backend_website/admin.html')
 
 def View_product(request):
     return render(request, 'backend_website/view-products.html')
+
+def logout_view(request):
+    logout(request)
+    return redirect('ecommerce_app:login')
+
+def cart(request):
+    return render(request, 'website/cart.html')

@@ -12,7 +12,9 @@ urlpatterns = [
     path('laptops/',views.laptops,name='laptops'),
     path('<slug:slug>',views.ProductDetail,name='ProductDetail'),
     path('aboutdetail/<int:abt_id>',views.aboutDetail,name='AboutDetail'),
-    path('login-page/',views.login_view,name='login'),
-    path('AdminPage/',views.Admin_page,name='AdminPage'),
+    path('login/',views.login_view,name='login'),
+    path('logout/',views.logout_view,name='logout'),
+    path('AdminPage/',views.Admin_dashboard,name='AdminPage'),
     path('ViewProduct/',views.View_product,name='ViewProduct'),
+    path('Cart/',views.cart,name='cart'),
 ]

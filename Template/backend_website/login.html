@@ -29,6 +29,11 @@
                 <h1>Login</h1>
               </div>
               <form method="POST" action="" class="form">
+                {% if messages %}
+                  {% for mes in messages %}
+                    <div class="alert alert-danger">{{ mes }}</div>
+                  {% endfor %}
+                {% endif %}
                 <div class="form-group">
                   <label>Username</label>
                   <input type="text" name="username" placeholder="Username" class="form-control">
@@ -43,7 +48,7 @@
                     <a href="#" class="login-links">Reset Password</a>
                   </div>
                   <div class="col-sm-4 text-center">
-                    <a href="../frontend/index.html" class="login-links">Back to home</a>
+                    <a href="{% url 'ecommerce_app:home' %}" class="login-links">Back to home</a>
                   </div>
                   <div class="col-sm-4">
                     <a href="#" class="login-links pull-right">Register</a>
