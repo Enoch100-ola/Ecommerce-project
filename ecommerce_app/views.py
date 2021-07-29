@@ -13,6 +13,8 @@ from django.conf import settings
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 
+from ecommerce_app.forms import *
+
 
 # Create your views here.
 def home(request):
@@ -126,3 +128,13 @@ def logout_view(request):
 
 def cart(request):
     return render(request, 'website/cart.html')
+
+def add_product(request):
+    if request.method == 'POST':
+        product_form = AddLatestProduct(request.POST)
+        if product_form.is_valid():
+            product_form.save()
+            messages.success(request, 'New Product added successfully ')
+    else:
+        product_form = AddLatestProduct()
+    return render(request, 'backend_website/add-product.html', {'proc':product_form})

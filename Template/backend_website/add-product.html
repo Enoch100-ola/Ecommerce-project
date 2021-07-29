@@ -1,0 +1,18 @@
+{% extends 'backend_website/base.html' %}
+{% load static %}
+
+{% block title %}
+Admin
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+       <div class="col-sm-12">
+        <form method="POST" class="p-5 bg-white border">
+            {{ proc }}
+            <input type="submit" class="btn btn-primary" value="Add Property">
+            {% csrf_token %}
+        </form>
+       </div>
+   </div>
+{% endblock %}
