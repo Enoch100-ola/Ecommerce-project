@@ -6,13 +6,16 @@ Admin
 {% endblock %}
 
 {% block content %}
-    <div class="row">
-       <div class="col-sm-12">
+<div class="content-wrapper">
+    <div class="container-fluid">
+     <div class="row">
+        <div class="col-sm-3"></div>
         <form method="POST" class="p-5 bg-white border">
             {{ proc }}
-            <input type="submit" class="btn btn-primary" value="Add Property">
-            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="Add Product">                       {% csrf_token %}
         </form>
-       </div>
-   </div>
+        </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
