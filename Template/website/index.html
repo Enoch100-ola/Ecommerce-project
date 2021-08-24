@@ -95,7 +95,8 @@ Home page
           {% for d in homepage1 %}
          <div class="col-md-3 col-sm-6">
            <div class="thumbnail">
-             <img src="{{ d.latest_img_url1 }}">
+            <a href="{{ d.get_product_url }} ">  <img src="{{ d.latest_img_url1 }}" > </a>
+            
            </div>
            <div class="blog-content">
               <p>
@@ -108,7 +109,7 @@ Home page
              <p>
               {{ d.latest_product_description }}
              </p>
-             <a href="{% url 'ecommerce_app:ProductDetail' d.id %}" class="btn btn-success">Readmore</a>
+             <a href="{{ d.get_product_url }}" class="btn btn-success">Readmore</a>
            </div>
          </div>
          {% endfor %}
@@ -124,7 +125,7 @@ Home page
           {% for f in homepage2 %}
             <div class="col-md-3 col-sm-6">
            <div class="thumbnail">
-             <img src="{{ f.latest_img_url1 }}">
+             <a href="{{ f.get_product_url }} ">  <img src="{{ f.latest_img_url1 }}"> </a>
            </div>
            <div class="blog-content">
               <p>
@@ -137,7 +138,7 @@ Home page
              <p>
                 {{ f.latest_product_description }}
              </p>
-             <a href="{% url 'ecommerce_app:ProductDetail' f.id %}" class="btn btn-success">Readmore</a>
+             <a href="{{ f.get_product_url }}" class="btn btn-success">Readmore</a>
            </div>
          </div>
           {% endfor %}

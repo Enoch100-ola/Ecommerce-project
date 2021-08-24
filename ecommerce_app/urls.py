@@ -10,6 +10,12 @@ urlpatterns = [
     path('contact/',views.contact,name='contact'),
     path('phones/',views.phones,name='phones'),
     path('laptops/',views.laptops,name='laptops'),
-    path('productdetail/<int:prod_id>',views.ProductDetail,name='ProductDetail'),
+    path('<slug:slug>',views.ProductDetail,name='ProductDetail'),
     path('aboutdetail/<int:abt_id>',views.aboutDetail,name='AboutDetail'),
+    path('login/',views.login_view,name='login'),
+    path('logout/',views.logout_view,name='logout'),
+    path('AdminPage/',views.Admin_dashboard,name='AdminPage'),
+    path('AddProduct/',views.add_product,name='addproduct'), 
+    path('ViewProduct/',views.View_product,name='ViewProduct'), 
+    path('Cart/',views.cart,name='cart'),
 ]
